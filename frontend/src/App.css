@@ -207,7 +207,7 @@ p {
 .authPage .container form button:hover:not(:disabled):not(.eye-toggle) {
   background: #2b2a5b;
   box-shadow: 0 4px 14px rgba(45, 86, 73, 0.35);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 .authPage .container form button:active:not(:disabled):not(.eye-toggle) {
   transform: translateY(0);
@@ -236,6 +236,7 @@ p {
   background:#2b2a5b;
   color: #fff;
   box-shadow: 0 4px 14px rgba(45, 86, 73, 0.25);
+    transform: translateY(-2px);
 }
 .authPage .banner {
   flex: 2;
