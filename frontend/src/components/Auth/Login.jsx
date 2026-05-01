@@ -35,6 +35,7 @@ const Login = () => {
       setPassword("");
       setRole("");
       setIsAuthorized(true);
+      console.log("response from server : "+ data);
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
