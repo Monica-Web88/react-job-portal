@@ -87,7 +87,8 @@ const Application = () => {
       setPhone("");
       setAddress("");
       setResume(null);
-      toast.success(data.message);
+      toast.success(data.message);W
+      console.log("response from server : "+data);
       navigateTo("/job/getall");
     } catch (error) {
       const errorMessage = error.response?.data?.message || 
