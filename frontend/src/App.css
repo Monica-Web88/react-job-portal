@@ -131,7 +131,6 @@ p {
   height: 42px;
 }
 .authPage .container form .inputTag div:focus-within {
-  border-color: ;
   box-shadow: 0 0 0 3px rgba(45, 86, 73, 0.12);
 }
 .authPage .container form .inputTag div input,
