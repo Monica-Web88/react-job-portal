@@ -41,6 +41,11 @@ const Navbar = () => {
               HOME
             </Link>
           </li>
+           <li>
+            <Link to={"/job/getall"} onClick={() => setShow(false)}>
+              SEARCH JOBS
+            </Link>
+          </li>
           <li>
             <Link to={"/job/getall"} onClick={() => setShow(false)}>
               ALL JOBS

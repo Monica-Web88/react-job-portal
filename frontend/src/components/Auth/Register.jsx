@@ -58,7 +58,7 @@ const Register = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/careerconnect-black.png" alt="logo" />
+            <img src="/job_portal_img_tran.png" alt="logo" />
             <h3>Create a new account</h3>
           </div>
           <form>
@@ -135,7 +135,7 @@ const Register = () => {
           </form>
         </div>
         <div className="banner">
-          <img src="/register.png" alt="login" />
+          <img src="/register_img.png" alt="login" />
         </div>
       </section>
     </>
