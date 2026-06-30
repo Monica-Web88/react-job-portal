@@ -6,64 +6,99 @@ import { Context } from "../../main";
 const SearchJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [query, setQuery] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const { isAuthorized } = useContext(Context);
 
+  // Fetch all jobs once when the component loads
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/job/getall", {
-          withCredentials: true,
-        });
-        console.log(data.jobs);
+        const { data } = await axios.get(
+          "http://localhost:4000/api/v1/job/getall",
+          {
+            withCredentials: true,
+          }
+        );
+
         setJobs(data.jobs || []);
       } catch (error) {
         console.error(error);
         setJobs([]);
       }
     };
+
     fetchJobs();
   }, []);
 
+  // Redirect if user is not logged in
   if (!isAuthorized) {
     return <Navigate to="/login" />;
   }
 
-  const q = query.trim().toLowerCase();
+  // Trigger search only when Search button is clicked
+  const handleSearch = () => {
+    setSearchTerm(query.trim().toLowerCase());
+  };
+
+  // Filter jobs using the searchTerm
   const filteredJobs = jobs.filter((job) => {
-    if (!q) return true;
+    if (!searchTerm) return false;
+
     return (
-      (job.title && job.title.toLowerCase().includes(q)) ||
-      (job.description && job.description.toLowerCase().includes(q)) ||
-      (job.category && job.category.toLowerCase().includes(q)) ||
-      (job.country && job.country.toLowerCase().includes(q)) ||
-      (job.city && job.city.toLowerCase().includes(q))
+      (job.title &&
+        job.title.toLowerCase().includes(searchTerm)) ||
+      (job.description &&
+        job.description.toLowerCase().includes(searchTerm)) ||
+      (job.category &&
+        job.category.toLowerCase().includes(searchTerm)) ||
+      (job.country &&
+        job.country.toLowerCase().includes(searchTerm)) ||
+      (job.city &&
+        job.city.toLowerCase().includes(searchTerm))
     );
   });
 
   return (
-    <section className="search page">
+    <section className="jobSearch page">
       <div className="container">
-        <h1>Search Jobs</h1>
+        <h3>Search Jobs</h3>
 
-        <div className="search_box">
+        <div
+          className="search_box"
+          style={{
+            display: "flex",
+            gap: "10px",
+            marginBottom: "20px",
+          }}
+        >
           <input
             type="text"
             placeholder="Search by title, keyword, category, city or country"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearch();
+              }
+            }}
+            style={{ flex: 1 }}
           />
+
+          <button onClick={handleSearch}>
+            Search
+          </button>
         </div>
 
         <div className="banner">
-          {filteredJobs && filteredJobs.length > 0 ? (
+          {searchTerm === "" ? (
+            <p>Type a keyword and click the Search button.</p>
+          ) : filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
               <div className="card" key={job._id}>
-                <p>{job.title}</p>
-                <p>{job.category}</p>
-                <p>
-                  {job.country} {job.city ? `- ${job.city}` : ""}
-                </p>
-                <Link to={`/job/${job._id}`}>Job Details</Link>
+                    <p>{job.title}</p>
+                    <p>{job.category}</p>
+                    <p>{job.country}</p>
+                    <Link to={`/job/${job._id}`}>Job Details</Link>
               </div>
             ))
           ) : (

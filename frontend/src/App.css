@@ -660,12 +660,12 @@ p {
     width: 100%;
   }
 }
-.jobs {
+.jobs, .jobSearch {
   background: #f1f3f6;
   min-height: 100vh;
   padding: 50px 20px;
 }
-.jobs .container {
+.jobs .container, .jobSearch .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -674,7 +674,7 @@ p {
   margin: 0 auto;
   gap: 35px;
 }
-.jobs .container .banner {
+.jobs .container .banner, .jobSearch .container .banner {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -682,7 +682,7 @@ p {
   justify-content: center;
   padding: 30px 0;
 }
-.jobs .container .banner .card {
+.jobs .container .banner .card, .jobSearch .container .banner .card {
   background: #fff;
   text-decoration: none;
   width: 320px;
@@ -693,25 +693,25 @@ p {
   gap: 10px;
   justify-content: center;
 }
-.jobs .container .banner .card:hover {
+.jobs .container .banner .card:hover, .jobSearch .container .banner .card:hover {
   transition: all 0.3s;
   box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
   -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
   -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
 }
-.jobs .container .banner .card p:first-child {
+.jobs .container .banner .card p:first-child, .jobSearch .container .banner .card p:first-child {
   font-weight: bold;
   font-size: 1.6rem;
 }
-.jobs .container .banner .card p:nth-child(2) {
+.jobs .container .banner .card p:nth-child(2), .jobSearch .container .banner .card p:nth-child(2) {
   font-size: 1.3rem;
   color: gray;
 }
-.jobs .container .banner .card p:last-child {
+.jobs .container .banner .card p:last-child, .jobSearch .container .banner .card p:last-child {
   font-size: 1rem;
   color: gray;
 }
-.jobs .container .banner .card a {
+.jobs .container .banner .card a , .jobSearch .container .banner .card a {
   text-decoration: none;
   padding: 7px;
   font-size: 20px;
@@ -722,17 +722,17 @@ p {
   text-align: center;
 }
 @media (max-width: 1520px) {
-  .jobs .container {
+  .jobs .container, .jobSearch .container {
     min-width: 100%;
   }
 }
 @media (max-width: 1060px) {
-  .jobs .container .banner .card {
+  .jobs .container .banner .card, .jobSearch .container .banner .card {
     width: 360px;
   }
 }
 @media (max-width: 795px) {
-  .jobs .container .banner .card {
+  .jobs .container .banner .card, .jobSearch .container .banner .card {
     width: 100%;
   }
 }

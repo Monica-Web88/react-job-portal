@@ -16,9 +16,11 @@ const JobDetails = () => {
         withCredentials: true,
       })
       .then((res) => {
+        console.log(res.data.job);
         setJob(res.data.job);
       })
       .catch((error) => {
+        console.error(error);
         navigateTo("/notfound");
       });
   }, []);

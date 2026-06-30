@@ -11,6 +11,7 @@ import Footer from "./components/Layout/Footer";
 import Home from "./components/Home/Home";
 import Jobs from "./components/Job/Jobs";
 import JobDetails from "./components/Job/JobDetails";
+import SearchJobs from "./components/Job/SearchJobs";
 import Application from "./components/Application/Application";
 import MyApplications from "./components/Application/MyApplications";
 import PostJob from "./components/Job/PostJob";
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/job/getall" element={<Jobs />} />
           <Route path="/job/:id" element={<JobDetails />} />
+          <Route path="/job/search" element={<SearchJobs />} />
           <Route path="/application/:id" element={<Application />} />
           <Route path="/applications/me" element={<MyApplications />} />
           <Route path="/job/post" element={<PostJob />} />
