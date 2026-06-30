@@ -14,6 +14,7 @@ const SearchJobs = () => {
         const { data } = await axios.get("http://localhost:4000/api/v1/job/getall", {
           withCredentials: true,
         });
+        console.log(data.jobs);
         setJobs(data.jobs || []);
       } catch (error) {
         console.error(error);
