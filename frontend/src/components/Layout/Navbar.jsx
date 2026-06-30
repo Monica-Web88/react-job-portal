@@ -19,6 +19,7 @@ const Navbar = () => {
           withCredentials: true,
         }
       );
+      console.log(response.data.message);
       toast.success(response.data.message);
     } catch (error) {
       toast.error(error.response?.data?.message || "Logged out.");
