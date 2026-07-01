@@ -42,14 +42,14 @@ const Navbar = () => {
               HOME
             </Link>
           </li>
+            <li>
+            <Link to={"/job/getall"} onClick={() => setShow(false)}>
+              ALL JOBS
+            </Link>
+          </li>
            <li>
             <Link to={"/job/search"} onClick={() => setShow(false)}>
               SEARCH JOBS
-            </Link>
-          </li>
-          <li>
-            <Link to={"/job/getall"} onClick={() => setShow(false)}>
-              ALL JOBS
             </Link>
           </li>
           <li>

@@ -91,7 +91,7 @@ const SearchJobs = () => {
 
         <div className="banner">
           {searchTerm === "" ? (
-            <p></p>
+            <p>Example : Developer, Designer, United States, Los Angeles etc. </p>
           ) : filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
               <div className="card" key={job._id}>
