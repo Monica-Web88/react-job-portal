@@ -19,7 +19,7 @@ const SearchJobs = () => {
             withCredentials: true,
           }
         );
-
+        console.log("Jobs fetched from server: ", data.jobs);
         setJobs(data.jobs || []);
       } catch (error) {
         console.error(error);
