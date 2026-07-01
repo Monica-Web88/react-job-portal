@@ -61,7 +61,7 @@ const SearchJobs = () => {
   return (
     <section className="jobSearch page">
       <div className="container">
-        <h3>Search Jobs</h3>
+       <center> <h1>Search Jobs</h1></center>
 
         <div
           className="search_box"
@@ -72,7 +72,7 @@ const SearchJobs = () => {
           }}
         >
           <input
-            type="text"
+            type="text" className="searchjob_input"
             placeholder="Search by title, keyword, category, city or country"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
