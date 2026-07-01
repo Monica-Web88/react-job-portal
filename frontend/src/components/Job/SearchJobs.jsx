@@ -71,10 +71,10 @@ const SearchJobs = () => {
             marginBottom: "20px",
           }}
         >
-          <input
-            type="text" className="searchjob_input"
-            placeholder="Search by title, keyword, category, city or country"
-            value={query}
+                <input
+                  type="text" className="searchjob_input"
+                  placeholder="Search by title, keyword, category, city or country"
+                  value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
@@ -82,7 +82,7 @@ const SearchJobs = () => {
               }
             }}
             style={{ flex: 1 }}
-          />
+                />
 
           <button onClick={handleSearch}>
             Search
