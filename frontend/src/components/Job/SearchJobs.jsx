@@ -84,14 +84,14 @@ const SearchJobs = () => {
             style={{ flex: 1 }}
                 />
 
-          <button onClick={handleSearch}>
+          <button onClick={handleSearch} className="searchBtn">
             Search
           </button>
         </div>
 
         <div className="banner">
           {searchTerm === "" ? (
-            <p>Type a keyword and click the Search button.</p>
+            <p></p>
           ) : filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
               <div className="card" key={job._id}>

@@ -152,7 +152,7 @@ p {
   border: none;
   width: 500px;
   height: 100%;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #1a1a1a;
   transition: background 0.2s ease;
 }
@@ -225,7 +225,7 @@ p {
 }
 
 .jobSearch .container button {
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   border: none;
   font-weight: 700;
@@ -236,6 +236,13 @@ p {
   cursor: pointer;
   transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
   letter-spacing: 0.5px;
+}
+
+.searchjob_input
+{
+ width: 400px;
+    height: 50px;
+    font-size: 17px;
 }
 
 .authPage .container form button:hover:not(:disabled):not(.eye-toggle), .jobSearch .container button:hover:not(:disabled):not(.eye-toggle) {
@@ -812,6 +819,14 @@ p {
   margin-top: 10px;
   width: fit-content;
 }
+
+.jobDetail .container .banner a:hover
+{
+background-color: #184235;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 @media (max-width: 1520px) {
   .jobDetail .container {
     min-width: 100%;
