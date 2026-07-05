@@ -794,6 +794,7 @@ p {
 .jobDetail .container .banner {
   width: 100%;
   min-height: 767px;
+  margin-top: -80px;
   padding: 0px 25px;
   display: flex;
   flex-direction: column;
