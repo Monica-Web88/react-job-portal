@@ -14,12 +14,12 @@ const SearchJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getall",
+          `${import.meta.env.VITE_API_URL}/job/getall`,
           {
             withCredentials: true,
           }
         );
-        console.log("Jobs fetched from server: ", data.jobs);
+        console.log("Search Jobs: Getting job list from server ", data.jobs);
         setJobs(data.jobs || []);
       } catch (error) {
         console.error(error);

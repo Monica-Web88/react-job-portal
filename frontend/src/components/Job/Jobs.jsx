@@ -9,15 +9,15 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/v1/job/getall", {
+        .get(`${import.meta.env.VITE_API_URL}/job/getall`, {
           withCredentials: true,
         })
         .then((res) => {
-          console.log(res.data);
+          console.log("Jobs : Getting all jobs from server",res.data);
           setJobs(res.data);
         });
     } catch (error) {
-      console.log(error);
+      console.log("Jobs : Error fetching jobs from server", error);
     }
   }, []);
   if (!isAuthorized) {
