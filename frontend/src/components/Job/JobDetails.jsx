@@ -20,7 +20,7 @@ const JobDetails = () => {
         setJob(res.data.job);
       })
       .catch((error) => {
-        console.error(error);
+        console.error("cannot get job from server"+ error);
         navigateTo("/notfound");
       });
   }, []);
