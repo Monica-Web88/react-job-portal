@@ -35,7 +35,7 @@ const Application = () => {
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           ];
     if (!allowedTypes.includes(file.type)) {
-      setFileError("Please select a valid image file (PNG, JPEG, or WEBP)");
+      setFileError("Please select a PDF, DOC, or DOCX file.");
       setResume(null);
       return;
     }
@@ -157,12 +157,12 @@ const Application = () => {
             >
               Upload Resume 
               <p style={{ color: "red", fontSize: "12px", margin: "5px 0 0 0" }}>
-                (Supported formats: PNG, JPEG, WEBP. Max size: 2MB)
+                 (Supported formats: PDF, DOC, DOCX. Max size: 2MB)
               </p>
             </label>
             <input
               type="file"
-              accept=".png,.jpg,.jpeg,.webp"
+              accept=".pdf,.doc,.docx"
               onChange={handleFileChange}
               style={{ width: "100%" }}
             />
