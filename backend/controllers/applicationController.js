@@ -92,7 +92,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
         url: cloudinaryResponse.secure_url,
       },
     });
-    
+    console.log("Application created: Cloudinary response ", cloudinaryResponse);
     res.status(200).json({
       success: true,
       message: "Application Submitted!",
