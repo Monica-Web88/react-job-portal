@@ -187,11 +187,13 @@ const EmployerCard = ({ element, openModal }) => {
           </p>
         </div>
         <div className="resume">
-          <img
-            src={element.resume.url}
-            alt="resume"
-            onClick={() => openModal(element.resume.url)}
-          />
+           <a 
+              href={element.resume.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume
+            </a>
         </div>
       </div>
     </>
