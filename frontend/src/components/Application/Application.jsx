@@ -29,7 +29,11 @@ const Application = () => {
     }
     
     // Check file type
-    const allowedTypes = ["image/png", "image/jpeg", "image/webp"];
+    const allowedTypes =  [
+            "application/pdf",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          ];
     if (!allowedTypes.includes(file.type)) {
       setFileError("Please select a valid image file (PNG, JPEG, or WEBP)");
       setResume(null);
