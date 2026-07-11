@@ -35,6 +35,8 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
       {
         resource_type: "raw",
         folder: "job_portal/resumes",
+        use_filename: true,
+        unique_filename: false
       }
     );
 
