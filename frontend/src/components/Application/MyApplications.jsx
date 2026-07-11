@@ -88,7 +88,6 @@ const MyApplications = () => {
                   element={element}
                   key={element._id}
                   deleteApplication={deleteApplication}
-                  openModal={openModal}
                 />
               );
             })
@@ -111,7 +110,7 @@ const MyApplications = () => {
                 <EmployerCard
                   element={element}
                   key={element._id}
-                  openModal={openModal}
+                 
                 />
               );
             })
@@ -127,7 +126,7 @@ const MyApplications = () => {
 
 export default MyApplications;
 
-const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
+const JobSeekerCard = ({ element, deleteApplication }) => {
   return (
     <>
       <div className="job_seeker_card">
@@ -149,11 +148,11 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
           </p>
         </div>
         <div className="resume">
-          <img
-            src={element.resume.url}
-            alt="resume"
-            onClick={() => openModal(element.resume.url)}
-          />
+        <a href={element.resume.url}
+            target="_blank"
+            rel="noopener noreferrer">
+            📄 View Resume
+          </a>
         </div>
         <div className="btn_area">
           <button onClick={() => deleteApplication(element._id)}>
@@ -165,7 +164,7 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
   );
 };
 
-const EmployerCard = ({ element, openModal }) => {
+const EmployerCard = ({ element }) => {
   return (
     <>
       <div className="job_seeker_card">
