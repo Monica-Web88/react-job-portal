@@ -33,11 +33,13 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
     const cloudinaryResponse = await cloudinary.uploader.upload(
       resume.tempFilePath,
       {
-        resource_type: "auto",
+        resource_type: "raw",
         folder: "job_portal/resumes",
       }
     );
 
+    console.log("Cloudinary response after setting file type:", cloudinaryResponse);
+    
     if (!cloudinaryResponse || cloudinaryResponse.error) {
       console.error(
         "Cloudinary Error:",
