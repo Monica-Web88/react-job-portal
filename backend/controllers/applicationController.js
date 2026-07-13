@@ -3,6 +3,7 @@ import ErrorHandler from "../middlewares/error.js";
 import { Application } from "../models/applicationSchema.js";
 import { Job } from "../models/jobSchema.js";
 import { v2 as cloudinary } from "cloudinary";
+import fs from "fs";
 
 export const postApplication = catchAsyncErrors(async (req, res, next) => {
   const { role } = req.user;
@@ -33,6 +34,11 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
 console.log("Resume mimetype:", resume.mimetype);
 console.log("Resume temp path:", resume.tempFilePath);
 const fileName = resume.name; 
+
+const fileBuffer = fs.readFileSync(resume.tempFilePath);
+
+console.log("First bytes:", fileBuffer.slice(0, 10).toString());
+console.log("File size:", fileBuffer.length);
 
   try {
     const cloudinaryResponse = await cloudinary.uploader.upload(

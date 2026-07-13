@@ -92,7 +92,7 @@ const Application = () => {
       setPhone("");
       setAddress("");
       setResume(null);
-      toast.success(data.message);W
+      toast.success(data.message);
       console.log("response from server : "+data);
       navigateTo("/job/getall");
     } catch (error) {
