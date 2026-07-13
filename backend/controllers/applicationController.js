@@ -44,10 +44,10 @@ console.log("File size:", fileBuffer.length);
     const cloudinaryResponse = await cloudinary.uploader.upload(
       resume.tempFilePath,
       {
-         resource_type: "auto", // Automatically detects that it's a PDF
-          public_id: fileName,
-          use_filename: false,
-          unique_filename: true
+        resource_type: "image",
+        folder: "job_portal/resumes",
+        use_filename: true,
+        unique_filename: false,
       }
     );
 
