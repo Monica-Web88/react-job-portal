@@ -38,11 +38,10 @@ const fileName = resume.name;
     const cloudinaryResponse = await cloudinary.uploader.upload(
       resume.tempFilePath,
       {
-        resource_type: "raw",
-        folder: "job_portal/resumes",
-        public_id: fileName,
-       use_filename: false,
-    unique_filename: true
+         resource_type: "auto", // Automatically detects that it's a PDF
+          public_id: fileName,
+          use_filename: false,
+          unique_filename: true
       }
     );
 
