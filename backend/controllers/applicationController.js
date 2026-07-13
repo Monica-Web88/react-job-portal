@@ -29,19 +29,26 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
     );
   }
   
+  console.log("Resume name:", resume.name);
+console.log("Resume mimetype:", resume.mimetype);
+console.log("Resume temp path:", resume.tempFilePath);
+const fileName = resume.name; 
+
   try {
     const cloudinaryResponse = await cloudinary.uploader.upload(
       resume.tempFilePath,
       {
         resource_type: "raw",
         folder: "job_portal/resumes",
-        use_filename: true,
-        unique_filename: false
+        public_id: fileName,
+       use_filename: false,
+    unique_filename: true
       }
     );
 
     console.log("Cloudinary response after setting file type:", cloudinaryResponse);
     
+
     if (!cloudinaryResponse || cloudinaryResponse.error) {
       console.error(
         "Cloudinary Error:",
