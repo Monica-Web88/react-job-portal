@@ -47,6 +47,7 @@ const Application = () => {
       return;
     }
     
+    console.log("Setting file : ", file);
     setResume(file);
   };
 
