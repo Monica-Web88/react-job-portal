@@ -39,32 +39,29 @@ const fileBuffer = fs.readFileSync(resume.tempFilePath);
 
 console.log("First bytes:", fileBuffer.slice(0, 10).toString());
 console.log("File size:", fileBuffer.length);
-  // 1. Get the extension (e.g., .pdf) from the original file name
-  const originalName = resume.name;
-  const fileExtension = originalName.substring(originalName.lastIndexOf('.')); // Extracts .pdf, .docx etc.
-
-  // 2. Create a clean, unique name using a timestamp to prevent overwrites
-  const uniqueId = `resume_${Date.now()}`; 
 
   try {
+    // 1. Create a Promise wrapper for Cloudinary's upload_stream
     const uploadFromBuffer = () => {
       return new Promise((resolve, reject) => {
         const stream = cloudinary.uploader.upload_stream(
           {
             folder: "job_portal/resumes",
             resource_type: "raw",
-            // This forces Cloudinary to save the file with the correct extension
-            public_id: `${uniqueId}${fileExtension}` 
+            // Forces the file to be treated as an attachment download
+            flags: "attachment" 
           },
           (error, result) => {
             if (error) return reject(error);
             resolve(result);
           }
         );
+        // Write your file buffer to the stream
         stream.end(fileBuffer);
       });
     };
 
+    // 2. Execute the upload
     const cloudinaryResponse = await uploadFromBuffer();
 
     console.log("Cloudinary response:", cloudinaryResponse);
