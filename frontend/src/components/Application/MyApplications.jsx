@@ -188,10 +188,9 @@ const EmployerCard = ({ element }) => {
         <div className="resume">
            <a 
               href={element.resume.url}
-              target="_blank"
-              rel="noopener noreferrer"
+             download="resume.pdf"
             >
-              View Resume
+              Download Resume
             </a>
         </div>
       </div>

@@ -41,25 +41,33 @@ console.log("First bytes:", fileBuffer.slice(0, 10).toString());
 console.log("File size:", fileBuffer.length);
 
   try {
-    const cloudinaryResponse = await cloudinary.uploader.upload(
-      resume.tempFilePath,
-      {
-        resource_type: "image",
-        folder: "job_portal/resumes",
-        use_filename: true,
-        unique_filename: false,
-      }
-    );
+    // 1. Create a Promise wrapper for Cloudinary's upload_stream
+    const uploadFromBuffer = () => {
+      return new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          {
+            folder: "job_portal/resumes",
+            resource_type: "raw",
+            // Forces the file to be treated as an attachment download
+            flags: "attachment" 
+          },
+          (error, result) => {
+            if (error) return reject(error);
+            resolve(result);
+          }
+        );
+        // Write your file buffer to the stream
+        stream.end(fileBuffer);
+      });
+    };
 
-    console.log("Cloudinary response after setting file type:", cloudinaryResponse);
-    
+    // 2. Execute the upload
+    const cloudinaryResponse = await uploadFromBuffer();
+
+    console.log("Cloudinary response:", cloudinaryResponse);
 
     if (!cloudinaryResponse || cloudinaryResponse.error) {
-      console.error(
-        "Cloudinary Error:",
-        cloudinaryResponse.error || "Unknown Cloudinary error"
-      );
-      return next(new ErrorHandler("Failed to upload Resume to Cloudinary", 500));
+       return next(new ErrorHandler("Failed to upload Resume to Cloudinary", 500));
     }
     
     const { name, email, coverLetter, phone, address, jobId } = req.body;
