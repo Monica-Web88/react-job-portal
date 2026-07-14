@@ -149,7 +149,6 @@ const JobSeekerCard = ({ element, deleteApplication }) => {
         </div>
         <div className="resume">
         <a href={element.resume.url}
-           download="resume.pdf"
             >
               Download Resume
             </a>
@@ -188,7 +187,6 @@ const EmployerCard = ({ element }) => {
         <div className="resume">
            <a 
               href={element.resume.url}
-             download="resume.pdf"
             >
               Download Resume
             </a>
