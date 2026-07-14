@@ -149,10 +149,10 @@ const JobSeekerCard = ({ element, deleteApplication }) => {
         </div>
         <div className="resume">
         <a href={element.resume.url}
-            target="_blank"
-            rel="noopener noreferrer">
-            📄 View Resume
-          </a>
+           download="resume.pdf"
+            >
+              Download Resume
+            </a>
         </div>
         <div className="btn_area">
           <button onClick={() => deleteApplication(element._id)}>
