@@ -49,7 +49,8 @@ console.log("File size:", fileBuffer.length);
             folder: "job_portal/resumes",
             resource_type: "raw",
             // Forces the file to be treated as an attachment download
-            flags: "attachment" 
+            flags: "attachment" ,
+            filename: 'resume.pdf' // Sets the downloaded file name to resume.pdf
           },
           (error, result) => {
             if (error) return reject(error);
