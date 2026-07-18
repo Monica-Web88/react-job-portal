@@ -48,8 +48,7 @@ console.log("File size:", fileBuffer.length);
 
         const stream = cloudinary.uploader.upload_stream(
           {
-            folder: "job_portal/resumes",
-            resource_type: "raw",
+           resource_type: "raw",
             public_id: `job_portal/resumes/${uniqueId}.pdf`
           },
           (error, result) => {
