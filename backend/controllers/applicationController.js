@@ -44,15 +44,14 @@ console.log("File size:", fileBuffer.length);
     // 1. Create a Promise wrapper for Cloudinary's upload_stream
     const uploadFromBuffer = () => {
       return new Promise((resolve, reject) => {
-         const uniqueId = `resume_${Date.now()}`;
-
         const stream = cloudinary.uploader.upload_stream(
           {
-           folder: "job_portal/resumes",
-            resource_type: "raw", // Fixed: Changed from "raw" to "image" for PDFs
-            public_id: `${uniqueId}.pdf`
+            folder: "job_portal/resumes",
+            resource_type: "raw",
+            // Forces the file to be treated as an attachment download
+            flags: "attachment" 
           },
-          (error, result) => {  
+          (error, result) => {
             if (error) return reject(error);
             resolve(result);
           }
