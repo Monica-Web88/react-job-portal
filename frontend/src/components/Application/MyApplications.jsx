@@ -76,10 +76,10 @@ const MyApplications = () => {
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
       
-      const currentTime = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-      link.download = `${currentTime}_resume.pdf`;
+      const currentDate = new Date().toISOString().split('T')[0];
+      link.download = `${currentDate}_resume.pdf`;
       document.body.appendChild(link);
-      //console.log("Append child : ", link);
+      console.log("Append child : ", link);
       link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(link.href);
