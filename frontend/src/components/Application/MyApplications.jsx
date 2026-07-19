@@ -148,9 +148,11 @@ const JobSeekerCard = ({ element, deleteApplication }) => {
           </p>
         </div>
         <div className="resume">
-          <a href={element.resume.url} download>
-            Download Resume
-          </a>
+        <a href={element.resume.url}
+           download="resume.pdf"
+            >
+              Download Resume
+            </a>
         </div>
         <div className="btn_area">
           <button onClick={() => deleteApplication(element._id)}>
@@ -184,9 +186,12 @@ const EmployerCard = ({ element }) => {
           </p>
         </div>
         <div className="resume">
-         <a href={element.resume.url} download>
-          Download Resume
-        </a>
+           <a 
+              href={element.resume.url}
+             download="resume.pdf"
+            >
+              Download Resume
+            </a>
         </div>
       </div>
     </>
