@@ -68,6 +68,16 @@ const MyApplications = () => {
     setModalOpen(false);
   };
 
+  const handleDownloadResume = (resumeUrl) => {
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "resume.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="my_applications page">
       {user && user.role === "Job Seeker" ? (
@@ -88,6 +98,7 @@ const MyApplications = () => {
                   element={element}
                   key={element._id}
                   deleteApplication={deleteApplication}
+                  handleDownloadResume={handleDownloadResume}
                 />
               );
             })
@@ -110,6 +121,7 @@ const MyApplications = () => {
                 <EmployerCard
                   element={element}
                   key={element._id}
+                  handleDownloadResume={handleDownloadResume}
                  
                 />
               );
@@ -126,7 +138,7 @@ const MyApplications = () => {
 
 export default MyApplications;
 
-const JobSeekerCard = ({ element, deleteApplication }) => {
+const JobSeekerCard = ({ element, deleteApplication, handleDownloadResume }) => {
   return (
     <>
       <div className="job_seeker_card">
@@ -148,11 +160,20 @@ const JobSeekerCard = ({ element, deleteApplication }) => {
           </p>
         </div>
         <div className="resume">
-        <a href={element.resume.url}
-           download="resume.pdf"
-            >
-              Download Resume
-            </a>
+          <button 
+            onClick={() => handleDownloadResume(element.resume.url)}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#28a745",
+              cursor: "pointer",
+              textDecoration: "underline",
+              fontSize: "16px",
+              padding: "0"
+            }}
+          >
+            Download Resume
+          </button>
         </div>
         <div className="btn_area">
           <button onClick={() => deleteApplication(element._id)}>
@@ -164,7 +185,7 @@ const JobSeekerCard = ({ element, deleteApplication }) => {
   );
 };
 
-const EmployerCard = ({ element }) => {
+const EmployerCard = ({ element, handleDownloadResume }) => {
   return (
     <>
       <div className="job_seeker_card">
@@ -186,12 +207,20 @@ const EmployerCard = ({ element }) => {
           </p>
         </div>
         <div className="resume">
-           <a 
-              href={element.resume.url}
-             download="resume.pdf"
-            >
-              Download Resume
-            </a>
+          <button 
+            onClick={() => handleDownloadResume(element.resume.url)}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#28a745",
+              cursor: "pointer",
+              textDecoration: "underline",
+              fontSize: "16px",
+              padding: "0"
+            }}
+          >
+            Download Resume
+          </button>
         </div>
       </div>
     </>
