@@ -69,6 +69,7 @@ const MyApplications = () => {
   };
 
   const handleDownloadResume = (resumeUrl) => {
+    console.log("Downloading resume from URL:", resumeUrl);
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "resume.pdf";
