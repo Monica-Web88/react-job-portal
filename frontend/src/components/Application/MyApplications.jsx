@@ -68,15 +68,23 @@ const MyApplications = () => {
     setModalOpen(false);
   };
 
-  const handleDownloadResume = (resumeUrl) => {
-    console.log("Downloading resume from URL:", resumeUrl);
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "resume.pdf";
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownloadResume = async (resumeUrl) => {
+    try {
+      const response = await fetch(resumeUrl);
+     
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      
+      link.download = "resume.pdf";
+      document.body.appendChild(link);
+      console.log("Append child : ", link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
