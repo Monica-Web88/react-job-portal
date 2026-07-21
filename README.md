@@ -1,4 +1,4 @@
-# 🚀 MERN Job Portal | Full-Stack Job Portal with JWT Authentication
+# 🚀 MERN Full-Stack Job Portal with JWT Authentication
 
 > **A production-ready full-stack Job Portal built with the MERN Stack, featuring secure authentication, role-based access, job posting, application tracking, resume uploads, and a responsive modern UI.**
 
@@ -16,7 +16,7 @@
 
 ## 📸 Project Preview
 
-![Job Portal Screenshot](./Job_portal_SS.jpg)
+![Job Portal Screenshot](Job_portal_SS.jpg)
 
 ---
 
