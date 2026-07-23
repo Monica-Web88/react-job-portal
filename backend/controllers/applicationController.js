@@ -31,13 +31,13 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
   }
   
   console.log("Resume name:", resume.name);
-console.log("Resume mimetype:", resume.mimetype);
-console.log("Resume temp path:", resume.tempFilePath);
+//console.log("Resume mimetype:", resume.mimetype);
+//console.log("Resume temp path:", resume.tempFilePath);
 const fileName = resume.name; 
 
 const fileBuffer = fs.readFileSync(resume.tempFilePath);
 
-console.log("First bytes:", fileBuffer.slice(0, 10).toString());
+//console.log("First bytes:", fileBuffer.slice(0, 10).toString());
 console.log("File size:", fileBuffer.length);
 
   try {

@@ -79,7 +79,7 @@ const MyApplications = () => {
       const currentDate = new Date().toISOString().split('T')[0];
       link.download = `${currentDate}_resume.pdf`;
       document.body.appendChild(link);
-      console.log("Append child : ", link);
+      //console.log("Append child : ", link);
       link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(link.href);

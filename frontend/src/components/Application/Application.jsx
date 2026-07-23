@@ -47,7 +47,7 @@ const Application = () => {
       return;
     }
     
-    console.log("Setting file : ", file);
+    //console.log("Setting file : ", file);
     setResume(file);
   };
 
@@ -93,7 +93,7 @@ const Application = () => {
       setAddress("");
       setResume(null);
       toast.success(data.message);
-      console.log("response from server : "+data);
+      //console.log("response from server : "+data);
       navigateTo("/job/getall");
     } catch (error) {
       const errorMessage = error.response?.data?.message || 

@@ -13,7 +13,7 @@ const Jobs = () => {
           withCredentials: true,
         })
         .then((res) => {
-          console.log("Jobs : Getting all jobs from server",res.data);
+          //console.log("Jobs : Getting all jobs from server",res.data);
           setJobs(res.data);
         });
     } catch (error) {

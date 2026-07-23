@@ -19,7 +19,7 @@ const SearchJobs = () => {
             withCredentials: true,
           }
         );
-        console.log("Search Jobs: Getting job list from server ", data.jobs);
+       // console.log("Search Jobs: Getting job list from server ", data.jobs);
         setJobs(data.jobs || []);
       } catch (error) {
         console.error(error);

@@ -16,7 +16,7 @@ const JobDetails = () => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res.data.job);
+       // console.log(res.data.job);
         setJob(res.data.job);
       })
       .catch((error) => {

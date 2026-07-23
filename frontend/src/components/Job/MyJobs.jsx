@@ -20,7 +20,7 @@ const MyJobs = () => {
           `${import.meta.env.VITE_API_URL}/job/getmyjobs`,
           { withCredentials: true }
         );
-        console.log(data.myJobs);
+        //console.log(data.myJobs);
         setMyJobs(data.myJobs);
       } catch (error) {
         console.error(error);
