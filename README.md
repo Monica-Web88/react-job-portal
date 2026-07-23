@@ -17,19 +17,19 @@
 ## 📸 Project Preview
 
 Login Page for Job Seekers/ Employers
-![Job Portal Screenshot](Job_portal_SS.jpg)
+![Job Portal Screenshot](images/Job_portal_SS.jpg)
 
 Display all jobs available
-![Job Portal Screenshot](Job_Portal_Alljobs.jpg)
+![Job Portal Screenshot](images/Job_Portal_Alljobs.jpg)
 
 Search Jobs using keywords
-![Job Portal Screenshot](Job_Portal_Searchjobs.jpg)
+![Job Portal Screenshot](images/Job_Portal_Searchjobs.jpg)
 
 Apply for a Job
-![Job Portal Screenshot](Job_Portal_ApplyForJob.jpg)
+![Job Portal Screenshot](images/Job_Portal_ApplyForJob.jpg)
 
 View Applied Jobs (Can download resume, delete application)
-![Job Portal Screenshot](Job_Portal_MyAppl.jpg)
+![Job Portal Screenshot](images/Job_Portal_MyAppl.jpg)
 
 ---
 
