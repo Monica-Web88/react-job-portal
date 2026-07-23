@@ -25,6 +25,9 @@ Display all jobs available
 Search Jobs using keywords
 ![Job Portal Screenshot](Job_Portal_Searchjobs.jpg)
 
+Apply for a Job
+![Job Portal Screenshot](Job_Portal_ApplyForJob.jpg)
+
 View Applied Jobs (Can download resume, delete application)
 ![Job Portal Screenshot](Job_Portal_MyAppl.jpg)
 
