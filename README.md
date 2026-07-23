@@ -16,7 +16,17 @@
 
 ## 📸 Project Preview
 
+Login Page for Job Seekers/ Employers
 ![Job Portal Screenshot](Job_portal_SS.jpg)
+
+Display all jobs available
+![Job Portal Screenshot](Job_Portal_Alljobs.jpg)
+
+Search Jobs using keywords
+![Job Portal Screenshot](Job_Portal_Searchjobs.jpg)
+
+View Applied Jobs (Can download resume, delete application)
+![Job Portal Screenshot](Job_Portal_MyAppl.jpg)
 
 ---
 
